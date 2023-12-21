@@ -3,6 +3,7 @@ package com.xyz66.controller;
 import com.xyz66.entity.Student;
 import com.xyz66.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -13,6 +14,9 @@ public class StudentController {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @Value("${server.port}")
+    private String port;
 
     @GetMapping("/findAll")
     public Collection<Student> findAll() {
@@ -39,4 +43,8 @@ public class StudentController {
         studentRepository.delete(id);
     }
 
+    @GetMapping("/index")
+    public String index(){
+        return "当前端口:"+this.port;
+    }
 }
