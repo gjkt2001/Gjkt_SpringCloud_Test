@@ -18,10 +18,12 @@
     </properties>
 
     <dependencies>
+        <!--   netflix提供的eureka client，用于服务注册和发现     -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <!--  SpringCloud的OpenFeign客户端，用于服务调用，Http客户端      -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>

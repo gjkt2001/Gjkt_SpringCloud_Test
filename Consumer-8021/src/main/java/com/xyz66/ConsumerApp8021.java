@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  *
  */
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients// 扫描对应的feign client
 public class ConsumerApp8021
 {
     public static void main( String[] args )

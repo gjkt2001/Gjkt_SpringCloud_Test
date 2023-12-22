@@ -22,4 +22,9 @@ public class StudentController {
     public Student findById(@PathVariable("id") Long id) {
         return studentService.findById(id);
     }
+
+    @GetMapping("/deleteById/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
+        studentService.delete(id);
+    }
 }
