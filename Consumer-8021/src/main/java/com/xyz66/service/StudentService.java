@@ -5,6 +5,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author Gjkt
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "provider")// 服务提供者叫啥？
 public interface StudentService {
 
-    @GetMapping("student/findById/{id}")
+//    @GetMapping("student/findById/{id}")
+    @RequestMapping(value = "student/findById/{id}")// OpenFeign会自动解析@RequestMapping注解，并生成相应的HTTP请求。
     public Student findById(@PathVariable("id") Long id);
 }

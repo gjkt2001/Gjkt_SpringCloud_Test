@@ -4,6 +4,8 @@ import com.xyz66.entity.Student;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Collection;
 
@@ -14,6 +16,7 @@ import java.util.Collection;
 @Component
 @FeignClient(name="provider")//标注使用OpenFeign调用的springcloud-product-provider服务
 public interface StudentService {
-    @GetMapping("/student/findAll")
+//    @GetMapping("/student/findAll")
+    @RequestMapping(value = "/student/findAll",method = RequestMethod.GET)// 指定请求路径和请求方式
     public Collection<Student> findAll();
 }
