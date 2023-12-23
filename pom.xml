@@ -17,6 +17,7 @@
         <module>Consumer-8021</module>
         <module>ribbon</module>
         <module>feign</module>
+        <module>hystrix</module>
     </modules>
 
     <properties>
