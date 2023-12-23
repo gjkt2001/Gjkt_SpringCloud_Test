@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.*;
 public interface StudentService {
 
 //    @GetMapping("student/findById/{id}")
-    @RequestMapping(value = "student/findById/{id}")// OpenFeign会自动解析@RequestMapping注解，并生成相应的HTTP请求。
+    @RequestMapping(value = "student/findById/{id}")
     public Student findById(@PathVariable("id") Long id);
 
     @DeleteMapping(value = "student/delete/{id}")
+//    @RequestMapping(value = "student/delete/{id}",method = RequestMethod.DELETE)
     public void delete(@PathVariable("id") Long id);
 }

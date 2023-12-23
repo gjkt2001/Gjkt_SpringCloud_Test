@@ -15,6 +15,8 @@
         <module>consumer</module>
         <module>zuul</module>
         <module>Consumer-8021</module>
+        <module>ribbon</module>
+        <module>feign</module>
     </modules>
 
     <properties>
